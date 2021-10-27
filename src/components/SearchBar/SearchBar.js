@@ -1,14 +1,20 @@
- import './searchBar.css';
+import './searchBar.css';
+import { useState} from 'react';
 
 export default function SearchBar(props) {
   function changed(ev) {
     ev.preventDefault()
-    console.log(ev.target.value)
   }
   function submitted(ev) {
     ev.preventDefault()
+    setHistory(ev.target[`keyword`].value)
     console.log(`Submitted`)
   }
+  function clicked(ev) {
+    console.log(`clicked`)
+  }
+
+  const [history, setHistory] = useState('default')
 
   return (
     <section className="searchBar">
@@ -18,10 +24,18 @@ export default function SearchBar(props) {
           name="keyword"
           className="searchInput"
           placeholder="Keyword"
-          onInput={changed}
+          onInput={ changed }
         />
-        <button type="submit" name="searchBtn" className="searchBtn">Search</button>
+        <button
+          type="submit"
+          name="searchBtn"
+          className="searchBtn"
+          onClick={ clicked }
+        >
+          Search
+        </button>
       </form>
+      <p>{ history }</p>
     </section>
   );
 }
