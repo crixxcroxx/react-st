@@ -1,5 +1,6 @@
 import './app.css';
 import Header from '../Header/Header';
+import SearchBar from '../SearchBar/SearchBar';
 
 function App() {
   const name = "Company Name"
@@ -7,6 +8,7 @@ function App() {
   return (
     <div className="app">
       <Header company={ name }/>
+      <SearchBar />
     </div>
   );
 }
