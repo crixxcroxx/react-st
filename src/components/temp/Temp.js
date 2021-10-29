@@ -16,7 +16,7 @@ export function Temp() {
     let data = await response.json()
     setFilms(data.results)
   }
-
+  //GIT RESTORE FIRST!
   return (
     <>
       <p>This is from temp { count }</p>
