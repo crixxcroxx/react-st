@@ -1,8 +1,9 @@
 import './app.css';
-import { useState} from 'react';
+import { useState } from 'react';
 import Header from '../Header/Header';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchHistory from '../SearchHistory/SearchHistory';
+import { Temp } from '../temp/Temp';
 
 function App() {
   const name = "Company Name"
@@ -17,6 +18,7 @@ function App() {
       <Header company={ name }/>
       <SearchBar addTerm={ addTerm } />
       <SearchHistory history={ terms } />
+      <Temp />
     </div>
   );
 }
