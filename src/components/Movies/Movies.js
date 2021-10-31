@@ -1,22 +1,8 @@
 import '../App/app.css'
 import './movies.css'
-import { useState, useEffect } from 'react'
 
-export default function Movies() {
-  const [films, setFilms] = useState([])
-
-  useEffect(() => {
-    fetchData('films')
-  }, [films])
-
-  async function fetchData(type) {
-    let url = `https://swapi.dev/api/${type}`
-    let response = await fetch(url)
-    if(!response.ok) throw new Error('err')
-
-    let data = await response.json()
-    setFilms(data.results)
-  }
+export default function Movies(props) {
+  const { films } = props
 
   return (
     <div className="movies">
