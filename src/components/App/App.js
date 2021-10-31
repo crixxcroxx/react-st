@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Header from '../Header/Header';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchHistory from '../SearchHistory/SearchHistory';
-import { Temp } from '../temp/Temp';
+import Movies from '../Movies/Movies';
 
 function App() {
   const name = "Company Name"
@@ -17,8 +17,10 @@ function App() {
     <div className="app">
       <Header company={ name }/>
       <SearchBar addTerm={ addTerm } />
-      <SearchHistory history={ terms } />
-      <Temp />
+      <div className="results">
+        <SearchHistory history={ terms } />
+        <Movies />
+      </div>
     </div>
   );
 }

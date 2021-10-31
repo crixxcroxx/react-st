@@ -1,1 +1,6 @@
- 
+.search-history {
+  flex-basis: 100%;
+
+  max-width: 10rem;
+  outline: 1px solid red;
+}
