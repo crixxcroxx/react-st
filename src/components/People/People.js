@@ -1,22 +1,12 @@
-import { useState, useEffect } from 'react'
+import UseFetch from '../../UseFetch'
 
 export default function People() {
-  const [people, setPeople] = useState([])
-
-  async function fetchPeople() {
-    let res = await fetch('https://swapi.dev/api/people')
-    if(!res.ok) throw new Error(`Failed to fetch data`)
-    let data = await res.json()
-
-    setPeople(data.results)
-  }
-
-  useEffect(() => fetchPeople(), [])
+  let data = UseFetch("people")
 
   return (
     <div className="people">
       <ul>{
-        people.map(person => (
+        data.map(person => (
           <li key={person.name}>{person.name}</li>
         ))
       }</ul>
