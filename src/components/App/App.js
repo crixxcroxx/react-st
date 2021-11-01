@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react';
 import Header from '../Header/Header';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchHistory from '../SearchHistory/SearchHistory';
-import Movies from '../Movies/Movies';
+import Main from '../Main/Main';
 
 function App() {
   const name = "Company Name"
   const [terms, setTerms] = useState([])
-  const [dataType, setDataType] = useState('films')
+//   const [dataType, setDataType] = useState('films')
 
   function addTerm(term) {
     let newTerms = new Set([term, ...terms])
@@ -17,26 +17,26 @@ function App() {
 
   //
 
-  const [items, setItems] = useState([])
+//   const [items, setItems] = useState([])
 
-  useEffect(() => {
-    fetchData(terms[0])
-  }, [terms]) // eslint-disable-line react-hooks/exhaustive-deps
+//   useEffect(() => {
+//     fetchData(terms[0])
+//   }, [terms]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  useEffect(() => {
-    console.log(`initial render`)
-    fetchData()
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+//   useEffect(() => {
+//     console.log(`initial render`)
+//     fetchData()
+//   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-  async function fetchData(keyword) {
-    let url = `https://swapi.dev/api/${dataType}`
-    if(keyword) { url += `/?search=${keyword}` }
-    let response = await fetch(url)
-    if(!response.ok) throw new Error('err')
-
-    let data = await response.json()
-    setItems(data.results)
-  }
+//   async function fetchData(keyword) {
+//     let url = `https://swapi.dev/api/${dataType}`
+//     if(keyword) { url += `/?search=${keyword}` }
+//     let response = await fetch(url)
+//     if(!response.ok) throw new Error('err')
+//
+//     let data = await response.json()
+//     setItems(data.results)
+//   }
 
   return (
     <div className="app">
@@ -44,7 +44,7 @@ function App() {
       <SearchBar addTerm={ addTerm } />
       <div className="results">
         <SearchHistory history={ terms } />
-        <Movies films={ items }/>
+        <Main />
       </div>
     </div>
   );
