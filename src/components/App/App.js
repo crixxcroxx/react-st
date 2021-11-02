@@ -19,7 +19,7 @@ function App() {
     <div className="app">
       <Header company={ name }/>
       <SearchBar addTerm={ addTerm } />
-      <div className="results">
+      <div className="main-content">
         <SearchHistory history={ terms } />
         <Main />
       </div>

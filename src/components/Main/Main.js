@@ -1,3 +1,4 @@
+import './main.css';
 import { Switch, Route } from 'react-router-dom';
 import Home from '../Home/Home';
 import Films from '../Films/Films';

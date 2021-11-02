@@ -6,7 +6,7 @@ export default function SearchHistory(props) {
 
   return (
     <div className="search-history">
-      <h3 className="div-title">Search History</h3>
+      <h3 className="title">Search History</h3>
       <ul>
         {props.history.map(term => (
           term && <li key={ idx++ }>{ term }</li>

@@ -1,5 +1,5 @@
 import './nav.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Nav(props) {
 
@@ -7,9 +7,9 @@ export default function Nav(props) {
     <nav>
       <h3>{ props.name }</h3>
       <ul>
-        <li><Link to="/films">Films</Link></li>
-        <li><Link to="/people">People</Link></li>
-        <li><Link to="/planets">Planets</Link></li>
+        <li><NavLink activeClassName="activeLink" to="/films">Films</NavLink></li>
+        <li><NavLink activeClassName="activeLink" to="/people">People</NavLink></li>
+        <li><NavLink activeClassName="activeLink" to="/planets">Planets</NavLink></li>
       </ul>
     </nav>
   );

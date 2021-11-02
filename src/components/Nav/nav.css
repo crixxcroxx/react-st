@@ -18,3 +18,7 @@ nav a {
   color: #fff;
   text-decoration: none;
 }
+
+a.activeLink {
+  color: #5a1;
+}

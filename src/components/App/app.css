@@ -3,15 +3,26 @@
   place-items: center;
 }
 
-.results {
+.main-content {
   display: flex;
-  flex-direction: row;
 
   width: 80%;
 }
 
-.div-title {
+.title {
   text-align: center;
   margin: 0.8rem 0;
 }
 
+.main ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+a.activeLink {
+  color: #5a1;
+}
